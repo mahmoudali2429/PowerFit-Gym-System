@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PowerFitDAL.Repositories.Classes
 {
-    public class Repository<T> : IRepository<T> where T : BaseEntity
+    public class Repository<T> : IRepository<T> where T : BaseEntity, new()
     {
         private readonly PowerFitDbContext _dbcontext;
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PowerFitDAL.Repositories.Interfaces
 {
-    public interface IRepository<T> where T : BaseEntity
+    public interface IRepository<T> where T : BaseEntity, new()
     {
         IEnumerable<T> GetAll();
         T? GetById(int id);
