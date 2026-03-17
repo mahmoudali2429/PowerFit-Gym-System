@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore.txt" />
+  </Folder>
+  <Project Path="PowerFitBLL/PowerFitBLL.csproj" />
+  <Project Path="PowerFitDAL/PowerFitDAL.csproj" />
+  <Project Path="PowerFitPl/PowerFitPl.csproj" />
+</Solution>
