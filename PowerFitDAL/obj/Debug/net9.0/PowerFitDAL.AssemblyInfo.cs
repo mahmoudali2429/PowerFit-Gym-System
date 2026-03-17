@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PowerFitDAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+50caedb4d5622a6791b3be4f24fda96041ff1068")]
 [assembly: System.Reflection.AssemblyProductAttribute("PowerFitDAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PowerFitDAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
