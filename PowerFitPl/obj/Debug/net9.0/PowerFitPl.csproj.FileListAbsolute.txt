@@ -234,3 +234,4 @@ G:\A1-ITI materials\Web API\PowerFit System\PowerFit.GymManagementSystemSolution
 G:\A1-ITI materials\Web API\PowerFit System\PowerFit.GymManagementSystemSolution\PowerFitPl\bin\Debug\net9.0\PowerFitDAL.pdb
 G:\A1-ITI materials\Web API\PowerFit System\PowerFit.GymManagementSystemSolution\PowerFitPl\obj\Debug\net9.0\PowerFitPl.csproj.AssemblyReference.cache
 G:\A1-ITI materials\Web API\PowerFit System\PowerFit.GymManagementSystemSolution\PowerFitPl\obj\Debug\net9.0\PowerFitPl.csproj.Up2Date
+G:\A1-ITI materials\Web API\PowerFit System\PowerFit.GymManagementSystemSolution\PowerFitPl\obj\Debug\net9.0\PowerFitPl.sourcelink.json

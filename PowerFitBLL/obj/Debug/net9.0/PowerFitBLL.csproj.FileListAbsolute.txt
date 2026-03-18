@@ -13,3 +13,4 @@ G:\A1-ITI materials\Web API\PowerFit System\PowerFit.GymManagementSystemSolution
 G:\A1-ITI materials\Web API\PowerFit System\PowerFit.GymManagementSystemSolution\PowerFitBLL\obj\Debug\net9.0\refint\PowerFitBLL.dll
 G:\A1-ITI materials\Web API\PowerFit System\PowerFit.GymManagementSystemSolution\PowerFitBLL\obj\Debug\net9.0\PowerFitBLL.pdb
 G:\A1-ITI materials\Web API\PowerFit System\PowerFit.GymManagementSystemSolution\PowerFitBLL\obj\Debug\net9.0\ref\PowerFitBLL.dll
+G:\A1-ITI materials\Web API\PowerFit System\PowerFit.GymManagementSystemSolution\PowerFitBLL\obj\Debug\net9.0\PowerFitBLL.sourcelink.json
