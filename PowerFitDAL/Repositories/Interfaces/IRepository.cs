@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace PowerFitDAL.Repositories.Interfaces
 {
-    public interface IRepository<T> where T : BaseEntity, new()
+    public interface IRepository<TEntity> where TEntity : BaseEntity, new()
     {
-        IEnumerable<T> GetAll();
-        T? GetById(int id);
-        void Add(T entity);
-        void Update(T entity);
-        void Delete(int id);
-        int Save();
+        IEnumerable<TEntity> GetAll(Func<TEntity, bool>? condition = null);
+        TEntity? GetById(int id);
+        void Add(TEntity entity);
+        void Update(TEntity entity);
+        void Delete(TEntity entity);
     }
 }

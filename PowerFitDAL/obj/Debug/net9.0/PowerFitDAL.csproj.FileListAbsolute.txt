@@ -12,3 +12,4 @@ G:\A1-ITI materials\Web API\PowerFit System\PowerFit.GymManagementSystemSolution
 G:\A1-ITI materials\Web API\PowerFit System\PowerFit.GymManagementSystemSolution\PowerFitDAL\obj\Debug\net9.0\PowerFitDAL.pdb
 G:\A1-ITI materials\Web API\PowerFit System\PowerFit.GymManagementSystemSolution\PowerFitDAL\obj\Debug\net9.0\PowerFitDAL.genruntimeconfig.cache
 G:\A1-ITI materials\Web API\PowerFit System\PowerFit.GymManagementSystemSolution\PowerFitDAL\obj\Debug\net9.0\ref\PowerFitDAL.dll
+G:\A1-ITI materials\Web API\PowerFit System\PowerFit.GymManagementSystemSolution\PowerFitDAL\obj\Debug\net9.0\PowerFitDAL.sourcelink.json
