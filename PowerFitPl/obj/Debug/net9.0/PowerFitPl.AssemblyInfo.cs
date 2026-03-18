@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PowerFitPl")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c4252b4072bd5d1d7cfbd19e94088dcc6c8eb48")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cef6be4a8a19fedea02c314b12bd056f2a7d0650")]
 [assembly: System.Reflection.AssemblyProductAttribute("PowerFitPl")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PowerFitPl")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
