@@ -18,9 +18,9 @@ namespace PowerFitDAL.Entities
             get
             {
                 if (EndDate >= DateTime.Now)
-                    return "Espired";
-                else
                     return "Active";
+                else
+                    return "Expired";
             }
         }
 

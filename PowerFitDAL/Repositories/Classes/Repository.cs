@@ -28,24 +28,33 @@ namespace PowerFitDAL.Repositories.Classes
 
         public void Delete(TEntity entity)
         {
-            DbSet.Remove(entity);
+            entity.IsDeleted = true;
+            entity.DeletedAt = DateTime.Now;
         }
 
         public IEnumerable<TEntity> GetAll(Func<TEntity, bool>? condition = null)
         {
+            var query = DbSet.AsNoTracking().Where(e => !e.IsDeleted);
+
             if (condition is null)
-                return DbSet.AsNoTracking().ToList();
+                return query.ToList();
             else
-                return DbSet.AsNoTracking().Where(condition).ToList();
+                return query.Where(condition).ToList();
         }
 
         public TEntity? GetById(int id)
         {
-            return DbSet.Find(id);
+            
+            var entity = DbSet.Find(id);
+            if (entity is null || entity.IsDeleted) 
+                return null;
+            else 
+                return entity;
         }
 
         public void Update(TEntity entity)
         {
+            entity.UpdatedAt = DateTime.Now;
             DbSet.Update(entity);
         }
     }
