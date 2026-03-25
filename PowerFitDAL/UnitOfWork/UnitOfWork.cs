@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace PowerFitDAL.UnitOfWork
 {
-    public class UnitOFWrokers : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly Dictionary<Type, object> _repositories = new();
         private readonly PowerFitDbContext _dbContext;
-        public UnitOFWrokers(PowerFitDbContext dbContext)
+        public UnitOfWork(PowerFitDbContext dbContext)
         {
             _dbContext = dbContext;
         }

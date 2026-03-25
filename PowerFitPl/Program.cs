@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using PowerFitBLL.Services.Classes;
+using PowerFitBLL.Services.Interfaces;
 using PowerFitDAL.Data.Contexts;
+using PowerFitDAL.UnitOfWork;
 
 namespace PowerFitPl
 {
@@ -13,9 +16,10 @@ namespace PowerFitPl
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<PowerFitDbContext>(options =>
             {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefultConnection") ??
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection") ??
                     throw new InvalidOperationException(message: "No Connection string was found"));
             });
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             var app = builder.Build();
 

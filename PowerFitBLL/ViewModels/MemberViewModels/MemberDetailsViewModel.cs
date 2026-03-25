@@ -18,7 +18,7 @@ namespace PowerFitBLL.ViewModels.MemberViewModels
         public string? DateOfBirth { get; set; }
         public string? MembershipStartDate { get; set; }
         public string? MembershipEndDate { get; set; }
-        public string? Address { get; set; } = null!;
+        public string Address { get; set; } = null!;
 
     }
 }

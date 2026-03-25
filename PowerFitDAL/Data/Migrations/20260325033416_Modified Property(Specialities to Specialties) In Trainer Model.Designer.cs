@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PowerFitDAL.Data.Contexts;
 
@@ -11,9 +12,11 @@ using PowerFitDAL.Data.Contexts;
 namespace PowerFitDAL.Data.Migrations
 {
     [DbContext(typeof(PowerFitDbContext))]
-    partial class PowerFitDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260325033416_Modified Property(Specialities to Specialties) In Trainer Model")]
+    partial class ModifiedPropertySpecialitiestoSpecialtiesInTrainerModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,7 +52,7 @@ namespace PowerFitDAL.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("PowerFitDAL.Entities.HealthRecord", b =>
@@ -139,7 +142,7 @@ namespace PowerFitDAL.Data.Migrations
                     b.HasIndex("Phone")
                         .IsUnique();
 
-                    b.ToTable("Members", null, t =>
+                    b.ToTable("Members", t =>
                         {
                             t.HasCheckConstraint("GymUserValidEmailCheck", "Email LIKE '_%@_%._%'");
 
@@ -177,7 +180,7 @@ namespace PowerFitDAL.Data.Migrations
 
                     b.HasIndex("MemberId");
 
-                    b.ToTable("MemberSessions", (string)null);
+                    b.ToTable("MemberSessions");
                 });
 
             modelBuilder.Entity("PowerFitDAL.Entities.Membership", b =>
@@ -212,7 +215,7 @@ namespace PowerFitDAL.Data.Migrations
 
                     b.HasIndex("PlanId");
 
-                    b.ToTable("Memberships", (string)null);
+                    b.ToTable("Memberships");
                 });
 
             modelBuilder.Entity("PowerFitDAL.Entities.Plan", b =>
@@ -257,7 +260,7 @@ namespace PowerFitDAL.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Plans", null, t =>
+                    b.ToTable("Plans", t =>
                         {
                             t.HasCheckConstraint("PlanDurationDaysCheck", "DurationDays BETWEEN 1 AND 365");
                         });
@@ -308,7 +311,7 @@ namespace PowerFitDAL.Data.Migrations
 
                     b.HasIndex("TrainerId");
 
-                    b.ToTable("Sessions", null, t =>
+                    b.ToTable("Sessions", t =>
                         {
                             t.HasCheckConstraint("SessionCapacityCheck", "Capacity BETWEEN 1 AND 25");
 
@@ -356,9 +359,6 @@ namespace PowerFitDAL.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Photo")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Specialties")
                         .HasColumnType("int");
 
@@ -373,7 +373,7 @@ namespace PowerFitDAL.Data.Migrations
                     b.HasIndex("Phone")
                         .IsUnique();
 
-                    b.ToTable("Trainers", null, t =>
+                    b.ToTable("Trainers", t =>
                         {
                             t.HasCheckConstraint("GymUserValidEmailCheck", "Email LIKE '_%@_%._%'")
                                 .HasName("GymUserValidEmailCheck1");
@@ -417,7 +417,7 @@ namespace PowerFitDAL.Data.Migrations
 
                             b1.HasKey("MemberId");
 
-                            b1.ToTable("Members", (string)null);
+                            b1.ToTable("Members");
 
                             b1.WithOwner()
                                 .HasForeignKey("MemberId");
@@ -509,7 +509,7 @@ namespace PowerFitDAL.Data.Migrations
 
                             b1.HasKey("TrainerId");
 
-                            b1.ToTable("Trainers", (string)null);
+                            b1.ToTable("Trainers");
 
                             b1.WithOwner()
                                 .HasForeignKey("TrainerId");

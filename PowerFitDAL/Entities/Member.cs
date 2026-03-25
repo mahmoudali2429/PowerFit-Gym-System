@@ -10,7 +10,7 @@ namespace PowerFitDAL.Entities
     public class Member : GymUser
     {
         //'JoinDate' Property == 'CreatedAt' Property of BaseEntity
-        public string? Photo { get; set; }
+        
 
         #region Member > HealthRecord Relationship
         public HealthRecord HealthRecord { get; set; } = default!;

@@ -10,7 +10,7 @@ namespace PowerFitDAL.Entities
     public class Trainer : GymUser
     {
         // 'HireDate' Property == 'CreatedAt' of BaseEntity  
-        public Specialities Specialities { get; set; }
+        public Specialties Specialties { get; set; }
 
         #region Trainer > Session Relationship 
         public ICollection<Session> TrainerSessions { get; set; } = default!;

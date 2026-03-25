@@ -8,11 +8,12 @@ namespace PowerFitBLL.Services.Classes
     public class MemberService : IMemberService
     {
         private readonly IUnitOfWork _unitOfWork;
-
+        
         public MemberService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
+
         #region Helper Methods
         private bool IsEmailExists(string email, int? memberId = null)
         {
@@ -24,6 +25,7 @@ namespace PowerFitBLL.Services.Classes
         }
 
         #endregion
+
         public IEnumerable<MemberListViewModel> GetAllMembers()
         {
             var allMembersFromDb = _unitOfWork.GetRepository<Member>().GetAll();
@@ -199,7 +201,6 @@ namespace PowerFitBLL.Services.Classes
                 return false;
             }
         }
-
 
     }
 }

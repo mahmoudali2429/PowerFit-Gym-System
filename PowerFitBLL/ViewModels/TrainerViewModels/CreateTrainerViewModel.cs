@@ -1,16 +1,20 @@
-﻿using System;
+﻿using PowerFitDAL.Entities;
+using PowerFitDAL.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PowerFitBLL.ViewModels.MemberViewModels
+namespace PowerFitBLL.ViewModels.TrainerViewModels
 {
-    public class UpdateMemberViewModel
+    public class CreateTrainerViewModel
     {
+        [Required(ErrorMessage = "Name is required")]
+        [StringLength(50, MinimumLength = 2, ErrorMessage = "Name must be between 2 and 50 characters")]
+        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Name can contain only letters and spaces")]
         public string Name { get; set; } = null!;
-        public string? Photo { get; set; }
 
 
         [Required(ErrorMessage = "Email is required")]
@@ -26,6 +30,14 @@ namespace PowerFitBLL.ViewModels.MemberViewModels
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; } = null!;
 
+        [Required(ErrorMessage = "Date of birth is required")]
+        [DataType(DataType.Date)]
+        public DateOnly DateOfBirth { get; set; }
+
+
+        [Required(ErrorMessage = "Gender is required")]
+        public Gender Gender { get; set; }
+
 
         [Required(ErrorMessage = "Building number is required")]
         [Range(1, 9000, ErrorMessage = "Building number must be between 1 and 9000")]
@@ -34,12 +46,18 @@ namespace PowerFitBLL.ViewModels.MemberViewModels
 
         [Required(ErrorMessage = "Street is required")]
         [StringLength(30, MinimumLength = 2, ErrorMessage = "Street must be between 2 and 30 characters")]
-        public string Street { get; set; } = null!;
+        [RegularExpression(@"^[a-zA-Z0-9\s]+$", ErrorMessage = "City can contain only letters, numbers and spaces")]
+
+        public string Street { get; set; } = string.Empty;
 
 
         [Required(ErrorMessage = "City is required")]
         [StringLength(30, MinimumLength = 2, ErrorMessage = "City must be between 2 and 30 characters")]
         [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "City can contain only letters and spaces")]
-        public string City { get; set; } = null!;
+        public string City { get; set; } = string.Empty;
+
+        [Required(ErrorMessage ="Specialty is required")]
+        [EnumDataType(typeof(Specialties))]
+        public Specialties Specialties { get; set; }
     }
 }

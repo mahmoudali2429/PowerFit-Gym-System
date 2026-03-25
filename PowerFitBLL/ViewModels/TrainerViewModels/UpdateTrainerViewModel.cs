@@ -1,13 +1,14 @@
-﻿using System;
+﻿using PowerFitDAL.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PowerFitBLL.ViewModels.MemberViewModels
+namespace PowerFitBLL.ViewModels.TrainerViewModels
 {
-    public class UpdateMemberViewModel
+    public class UpdateTrainerViewModel
     {
         public string Name { get; set; } = null!;
         public string? Photo { get; set; }
@@ -41,5 +42,7 @@ namespace PowerFitBLL.ViewModels.MemberViewModels
         [StringLength(30, MinimumLength = 2, ErrorMessage = "City must be between 2 and 30 characters")]
         [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "City can contain only letters and spaces")]
         public string City { get; set; } = null!;
+
+        public Specialties specialties { get; set; }
     }
 }
