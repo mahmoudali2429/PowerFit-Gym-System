@@ -144,16 +144,14 @@ namespace PowerFitBLL.Services.Classes
         }
         public bool UpdateMember(int memberId, UpdateMemberViewModel updatedMember)
         {
+            var member = _unitOfWork.GetRepository<Member>().GetById(memberId);
+            if (member is null) return false;
+
+            // (IsEmailExists, IsPhoneExists) Are Methods In Helper Methods Region
+            if (IsEmailExists(updatedMember.Email, memberId) || IsPhoneExists(updatedMember.Phone, memberId))
+                return false;
             try
             {
-
-                var member = _unitOfWork.GetRepository<Member>().GetById(memberId);
-                if (member is null) return false;
-
-                // (IsEmailExists, IsPhoneExists) Are Methods In Helper Methods Region
-                if (IsEmailExists(updatedMember.Email, memberId) || IsPhoneExists(updatedMember.Phone, memberId))
-                    return false;
-
                 member.Name = updatedMember.Name;
                 member.Photo = updatedMember.Photo;
                 member.Email = updatedMember.Email;
