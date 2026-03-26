@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using PowerFitBLL.Services.Classes;
 using PowerFitBLL.Services.Interfaces;
 using PowerFitDAL.Data.Contexts;
+using PowerFitDAL.Data.DataSeeding;
 using PowerFitDAL.UnitOfWork;
 
 namespace PowerFitPl
@@ -22,6 +23,23 @@ namespace PowerFitPl
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             var app = builder.Build();
+
+            #region Migrate Database & Data Seeding
+
+            using var scope = app.Services.CreateScope();
+            var dbContext = scope.ServiceProvider.GetRequiredService<PowerFitDbContext>();
+
+            var pendingMigrations = dbContext.Database.GetPendingMigrations();
+            if(pendingMigrations?.Any() ?? false)
+            {
+                dbContext.Database.Migrate();
+            }
+
+            PowerFitDbContextSeeding.SeedData(dbContext);
+
+            #endregion
+
+
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
