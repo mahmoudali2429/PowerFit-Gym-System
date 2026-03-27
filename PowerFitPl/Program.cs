@@ -1,8 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using PowerFitBLL.Mapping;
 using PowerFitBLL.Services.Classes;
 using PowerFitBLL.Services.Interfaces;
 using PowerFitDAL.Data.Contexts;
 using PowerFitDAL.Data.DataSeeding;
+using PowerFitDAL.Repositories.Classes;
+using PowerFitDAL.Repositories.Interfaces;
 using PowerFitDAL.UnitOfWork;
 
 namespace PowerFitPl
@@ -21,6 +24,8 @@ namespace PowerFitPl
                     throw new InvalidOperationException(message: "No Connection string was found"));
             });
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped<ISessionRepository, SessionRepository>();
+            builder.Services.AddAutoMapper(X => X.AddProfile(new MappingProfiles())); 
 
             var app = builder.Build();
 

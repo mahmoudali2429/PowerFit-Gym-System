@@ -44,11 +44,11 @@ namespace PowerFitBLL.Services.Classes
         }
         public bool CreateMember(CreateMemberViewModel createdMember)
         {
+            // (IsEmailExists, IsPhoneExists) Are Methods In Helper Methods Region
+            if (IsEmailExists(createdMember.Email) || IsPhoneExists(createdMember.Phone)) return false;
+
             try
             {
-                // (IsEmailExists, IsPhoneExists) Are Methods In Helper Methods Region
-                if (IsEmailExists(createdMember.Email) || IsPhoneExists(createdMember.Phone)) return false;
-
                 var memberToDb = new Member()
                 {
                     Name = createdMember.Name,

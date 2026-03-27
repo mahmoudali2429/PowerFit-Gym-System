@@ -14,10 +14,13 @@ namespace PowerFitDAL.UnitOfWork
     {
         private readonly Dictionary<Type, object> _repositories = new();
         private readonly PowerFitDbContext _dbContext;
-        public UnitOfWork(PowerFitDbContext dbContext)
+        public UnitOfWork(PowerFitDbContext dbContext, ISessionRepository sessionRepository)
         {
             _dbContext = dbContext;
+            SessionRepository = sessionRepository;
         }
+
+        public ISessionRepository SessionRepository { get; }
 
         public IRepository<TEntity> GetRepository<TEntity>() where TEntity : BaseEntity, new()
         {

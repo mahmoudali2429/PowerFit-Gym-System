@@ -10,6 +10,7 @@ namespace PowerFitDAL.UnitOfWork
 {
     public interface IUnitOfWork
     {
+        public ISessionRepository SessionRepository { get; }
         public IRepository<TEntity> GetRepository<TEntity>() where TEntity : BaseEntity, new();
         public int Save();
     }
